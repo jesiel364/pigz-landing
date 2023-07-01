@@ -34,8 +34,8 @@
 	border-radius: 50px;
 	padding-left: 20pt;
 	padding-right: 20pt;
-	padding-bottom: 5px;
-	padding-top: 5px;
+	padding-bottom: 8px;
+	padding-top: 8px;
 
 }
 
@@ -171,4 +171,9 @@ input[type='phone']{
 	width: 100%;
 	margin-top: 24px;
 	margin-bottom: 24px;
+	
+}
+
+.Btn:hover{
+	background-image: linear-gradient(to left, #FA641E, #FFffff);
 }
