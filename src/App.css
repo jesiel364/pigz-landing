@@ -15,7 +15,7 @@
 	margin: auto;
 }
 
-.nav-div{
+.Nav-div{
 	background-color: #fff;
 	display: flex;
 	justify-content: space-between ;
@@ -27,7 +27,7 @@
 }
 
 
-.nav-div .Logo{
+.Nav-div .Logo{
 	font-size: 32pt;
 }
 
@@ -64,7 +64,7 @@
 	
 }
 
-.title-div{
+.Title-div{
 	display: flex;
 	max-width: 400px;
 	/* object-fit:contain; */
@@ -72,7 +72,7 @@
 	
 }
 
-.title-div img{
+.Title-div img{
 	height: 50pt;
 	/* width: 100vh; */
 	object-fit:cover;
@@ -115,7 +115,7 @@
 	border-radius: 38px;
 }
 
-.form1 .title{
+.form1 .Title{
 	font-size: 28px;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 600;
@@ -261,7 +261,7 @@ input[type='phone']{
 	color: #333333;
 }
 
-.Secao2 .title{
+.Secao2 .Title{
 	font-size: 32px;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 600;
@@ -273,7 +273,7 @@ input[type='phone']{
 	margin: auto;
 }
 
-.Secao2 .desc{
+.Secao2 .Desc{
 	font-size: 16px;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
