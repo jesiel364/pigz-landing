@@ -84,7 +84,7 @@ function Secao() {
 
   return (
     <div id="div-meio">
-      
+
       <img id="logo2" src={Logo2} />
       <p>Você tem um novo Pigzdido!</p>
 
@@ -101,18 +101,33 @@ function Secao2() {
   );
 }
 
-function Tabs() {
+function TabCard(props){
+  return (
+  <div className="TabCard">
+    <p id='title'>{props.title}</p>
 
-  function openTab() {
-    alert('tabTitle')
+    <div id='card'>
+      <p>{props.desc}</p>
+    </div>
+  </div>
+  );
+}
 
+function Tabs(props) {
+
+  let tab = null
+
+  const openTab = (param) => {
+    alert(param);
   }
 
   return (
+    <div className="cont">
     <div className="TabBar">
-      <button className="TabBarButton" onClick={openTab}>Padrão</button>
-
-
+      <button className="TabBarButton" onClick={event => openTab(props.title)}></button>
+      
+    </div>
+    
     </div>
   );
 }
@@ -121,15 +136,15 @@ function Tabs() {
 export default function App() {
 
   const info = [
-    {id:1, title: 'Marketplace', desc: 'Pra sua loja vender mais', pic: Store},
-    {id:2, title: 'É fácil e rápido', desc: 'Fazer um pedido no Pigz', pic: Smartphone},
-    {id:3, title: 'Pigz Gestão', desc: 'Você no controle, sempre', pic: PigzGestao},
-    {id:4, title: 'Vias de impressão', desc: 'Vias de impressão', pic: Print},
+    { id: 1, title: 'Marketplace', desc: 'Pra sua loja vender mais', pic: Store },
+    { id: 2, title: 'É fácil e rápido', desc: 'Fazer um pedido no Pigz', pic: Smartphone },
+    { id: 3, title: 'Pigz Gestão', desc: 'Você no controle, sempre', pic: PigzGestao },
+    { id: 4, title: 'Vias de impressão', desc: 'Vias de impressão', pic: Print },
   ]
 
 
   return (
-    
+
     <div className="Wrapper" >
       <Navbar />
       <div className='Div1'>
@@ -141,9 +156,19 @@ export default function App() {
       {
         info.map((item) => <Card key={item.id} pic={item.pic} title={item.title} desc={item.desc} />)
       }
-      
+
       <Secao2 />
-      <Tabs />
+
+      <div className="Tabular">
+        <Tabs title='Padrão' />
+        <Tabs title='Gestão' />
+        <Tabs title='Entregadores' />
+        <Tabs title='Pagamento' />
+
+       
+      </div>
+      <TabCard title='Pigz Marketplace' desc='Além de uma página exclusiva, com o Pigz Marketplace sua loja terá mais visibilidade, no app e no site. Uma vitrine com milhares de clientes todos os dias, pra vender muito mais.' />
+
     </div>
 
   );

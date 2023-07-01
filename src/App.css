@@ -284,3 +284,44 @@ input[type='phone']{
 	padding-bottom: 0px;
 	margin: auto;
 }
+
+.Tabular{
+	/* background-color: #FA641E; */
+	display: flex;
+	justify-content: space-around;
+}
+
+.Tabular button{
+	width: 70px;
+	height: 5px;
+	background-color:#FF881F;
+	border: none;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+
+.TabCard{
+	width: 100%;
+	/* background-color: aqua; */
+}
+
+.TabCard #title{
+	font-family: 'Poppins', sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	color: #333333;
+	text-align: center;
+	margin-left: 16px;
+}
+
+#card{
+	
+}
+
+#card p {
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	font-weight: 200;
+	color: #FFFFFF;
+	text-align: center;
+}
