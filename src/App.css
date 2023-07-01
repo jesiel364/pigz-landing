@@ -14,8 +14,9 @@
 	justify-content: space-between ;
 	padding: 16px;
 	position: -webkit-sticky;
-	position: sticky;
+	position:sticky;
 	top: 0;
+
 }
 
 
@@ -23,7 +24,7 @@
 	font-size: 32pt;
 }
 
-.nav-div button{
+.Btn{
 	background-image: linear-gradient(to left, #FA641E, #FF881F);
 	font-size: 14pt;
 	font-family: 'Poppins', sans-serif;
@@ -42,33 +43,53 @@
 	padding-left: 16px ;
 	padding-right: 16px ;
 	padding-top: 32px;
-	background-image: linear-gradient(to right, #FA641E, #FF881F);
+
+	/* min-width: 100vh; */
+	max-width: 100vh;
+	
+
 }
 
-.Container1 .title-div{
-	display: flex;
+.Div1{
+	background-image: linear-gradient(to right, #FA641E, #FF881F);
+	margin-bottom: 36px;
+	padding-bottom: 36px;
 	
 }
 
-.Container1 .title-div img{
-	height: 100%;
+.title-div{
+	display: flex;
+	max-width: 400px;
+	/* object-fit:contain; */
+	
+	
+}
 
-	background-color: red;
-	position: absolute;
-	left: 280pt;
+.title-div img{
+	height: 50pt;
+	/* width: 100vh; */
+	object-fit:cover;
+	/* object-position: 20% 100%; */
+	/* position: relative; */
+	/* background-color: blue; */
+	overflow-x: hidden;
+
 }
 
 .Container1 h2{
-	width: 300px;
-	font-size: 40pt;
+	min-width: 85%;
+	font-size: 36pt;
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
 	color: #FFFFFF;
-	display: flex;
+	/* display: flex; */
+		/* background-color: red; */
+
 }
 
 .Container1 p{
 	margin-top: 36px;
+
 	font-size: 16pt;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
@@ -76,27 +97,78 @@
 }
 
 .form1{
-	margin-top: 36px;
+	margin-top: 20px;
 	margin-left: 16px;
 	margin-right: 20px;
-	background-color: grey;
-	padding: 24px;
+	
+	background-color: #fff;
+	padding-top: 26px;
+	padding-left: 24px;
+	padding-right: 24px;
 	border-radius: 38px;
 }
 
-.form1 h3{
+.form1 .title{
 	font-size: 28px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	/* background-color: #FF881F; */
+	text-align: left;
+	padding-bottom: 8px;
+	
 }
 
 .form1 p{
-	padding-top: 24px;
-	padding-bottom: 24px;
+
+	font-size: 14px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	/* background-color: #FF881F; */
+	text-align: left;
+	padding-bottom: 18px;
+}
+
+.Form-input label{
+	font-size: 12px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	/* background-color: #FF881F; */
+	text-align: left;
+	padding-bottom: 8px;
 }
 
 .Form-input{
 	background-color: white;
 }
 
-input[type='text']{
-	padding: 8px;
+input{
+	padding: 14px;
+	border-radius: 16px;
+	width: 100%;
+	padding-left: 16px;
+	font-weight: 400;
+	font-size: 14px;
+	border-width: 1pt;
+	border-top-color: #ccc;
+	border-bottom-color: #ccc;
+	border-left-color: #ccc;
+	border-right-color: #ccc;
+}
+
+input::placeholder{
+	color: #ccc;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+}
+
+input[type='phone']{
+	margin-bottom: 16px;
+	/* background-color: #FA641E; */
+	font-size: 13pt;
+}
+
+.form1 .Btn{
+	width: 100%;
+	margin-top: 24px;
+	margin-bottom: 24px;
 }
