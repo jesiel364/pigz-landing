@@ -7,6 +7,10 @@ import Store from './assets/icones-banner/store.svg';
 import Smartphone from './assets/icones-banner/smartphone.svg';
 import PigzGestao from './assets/icones-banner/pigz-gestao.svg';
 import Print from './assets/icones-banner/print.svg';
+import MarketPic from './assets/pigzMarket/Grupo de máscara 2417@3x.png';
+import GestaoPic from './assets/pigzGestao/Grupo de máscara 2418@3x.png';
+import EntregaPic from './assets/pigzEntrega/Grupo de máscara 2420@3x.png';
+import MobilePic from './assets/pigzMobile/mobile@3x.png';
 
 function Navbar() {
   return (
@@ -96,8 +100,8 @@ function Secao() {
 function Secao2() {
   return (
     <div className="Secao2">
-      <p className='Title'>Tudo que você precisa<br></br> por apenas R$199/mês</p>
-      <p className="Desc">Tenha todas as funcionalidades<br></br> Pigz sem taxa de adesão, sem<br></br> comissão por cada venda, sem<br></br> letrinhas miúdas.</p>
+      <p className='Title'>Tudo que você precisa por apenas R$199/mês</p>
+      <p className="Desc">Tenha todas as funcionalidades Pigz sem taxa de adesão, sem comissão por cada venda, sem letrinhas miúdas.</p>
     </div>
   );
 }
@@ -106,6 +110,7 @@ const ItemsTab = [
   {
     id: 1,
     active: true,
+    pic: MarketPic,
     title: "Pigz Marketplace",
     desc:
       "Além de uma página exclusiva, com o Pigz Marketplace sua loja terá mais visibilidade, no app e no site. Uma vitrine com milhares de clientes todos os dias, pra vender muito mais."
@@ -113,6 +118,7 @@ const ItemsTab = [
   {
     id: 2,
     active: false,
+    pic: GestaoPic,
     title: "Pigz Gestão",
     desc:
       "Acompanhe suas vendas em tempo real, no computador ou no celular, de onde estiver. Faça alterações de preços e disponibilidade de produtos rapidamente, como deve ser."
@@ -120,6 +126,7 @@ const ItemsTab = [
   {
     id: 3,
     active: false,
+    pic: EntregaPic,
     title: "Gestão de entregadores",
     desc:
       "A ferramenta ideal pra quem tem entrega própria. Controle de entregas por motoboy, geração de relatórios por entregas e por taxas de entrega, individualmente."
@@ -127,6 +134,7 @@ const ItemsTab = [
   {
     id: 4,
     active: false,
+    pic: MobilePic,
     title: "Pagamento on-line",
     desc:
       "Segurança e agilidade para receber e entregar pedidos. Seus clientes pagam com Pix ou cartão de crédito pelo app, e o entregador nem precisa levar a maquininha de cartão."
@@ -171,9 +179,22 @@ function Tabs() {
 
         <div id="card">
           <p id="desc">{tab.desc}</p>
+          <div className="Mask">
+            <img src={tab.pic}></img>
+          </div>
         </div>
       </div>
     </>
+  );
+}
+
+function Secao3(){
+  return (
+    <div className="Secao3">
+      <p id='title'>E mais: suporte que realmente funciona!</p>
+
+      <Card title='Pigz' desc='Tudo o que você precisa' />
+    </div>
   );
 }
 
@@ -204,6 +225,8 @@ export default function App() {
       <Secao2 />
 
       <Tabs />
+
+      <Secao3 />
 
     </div>
 
