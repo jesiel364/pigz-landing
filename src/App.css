@@ -285,43 +285,42 @@ input[type='phone']{
 	margin: auto;
 }
 
-.Tabular{
-	/* background-color: #FA641E; */
+.TabBar {
 	display: flex;
-	justify-content: space-around;
-}
-
-.Tabular button{
-	width: 70px;
+	justify-content: space-between;
+	margin-top: 10px;
+  }
+  
+  .TabBarButton {
+	width: 100px;
 	height: 5px;
-	background-color:#FF881F;
+	/* background-color: #ff881f; */
 	border: none;
-	margin-left: 10px;
+	/* margin-left: 10px; */
 	border-radius: 5px;
-}
-
-.TabCard{
-	width: 100%;
-	/* background-color: aqua; */
-}
-
-.TabCard #title{
-	font-family: 'Poppins', sans-serif;
+  
+	/* padding: 20px; */
+  }
+  
+  .TabCard {
+	font-family: "Poppins", sans-serif;
+  }
+  
+  .TabCard #title {
 	font-size: 24px;
-	font-weight: 500;
-	color: #333333;
+	font-weight: 600;
 	text-align: center;
+  }
+  
+  .TabCard div {
+	background-image: linear-gradient(to right, #ff881f, #ff881f);
 	margin-left: 16px;
-}
-
-#card{
-	
-}
-
-#card p {
-	font-family: 'Poppins', sans-serif;
-	font-size: 15px;
-	font-weight: 200;
-	color: #FFFFFF;
-	text-align: center;
-}
+	margin-right: 16px;
+	border-radius: 40px;
+  }
+  
+  .TabCard div #desc {
+	color: #ffffff;
+	padding: 40px;
+	font-weight: 100;
+  }

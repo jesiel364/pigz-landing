@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import PigzLogo from './assets/logo.svg';
 import Logo2 from './assets/logo2.svg';
 import Burger1 from './assets/burger1/500.png';
@@ -101,37 +102,80 @@ function Secao2() {
   );
 }
 
-function TabCard(props){
-  return (
-  <div className="TabCard">
-    <p id='title'>{props.title}</p>
-
-    <div id='card'>
-      <p>{props.desc}</p>
-    </div>
-  </div>
-  );
-}
-
-function Tabs(props) {
-
-  let tab = null
-
-  const openTab = (param) => {
-    alert(param);
+const ItemsTab = [
+  {
+    id: 1,
+    active: true,
+    title: "Pigz Marketplace",
+    desc:
+      "Além de uma página exclusiva, com o Pigz Marketplace sua loja terá mais visibilidade, no app e no site. Uma vitrine com milhares de clientes todos os dias, pra vender muito mais."
+  },
+  {
+    id: 2,
+    active: false,
+    title: "Pigz Gestão",
+    desc:
+      "Acompanhe suas vendas em tempo real, no computador ou no celular, de onde estiver. Faça alterações de preços e disponibilidade de produtos rapidamente, como deve ser."
+  },
+  {
+    id: 3,
+    active: false,
+    title: "Gestão de entregadores",
+    desc:
+      "A ferramenta ideal pra quem tem entrega própria. Controle de entregas por motoboy, geração de relatórios por entregas e por taxas de entrega, individualmente."
+  },
+  {
+    id: 4,
+    active: false,
+    title: "Pagamento on-line",
+    desc:
+      "Segurança e agilidade para receber e entregar pedidos. Seus clientes pagam com Pix ou cartão de crédito pelo app, e o entregador nem precisa levar a maquininha de cartão."
   }
+];
+
+function Tabs() {
+  const [tab, setTab] = useState(ItemsTab[0]);
+
+  const change = (item) => {
+    tab.active = true;
+    ItemsTab.filter((ele) => {
+      if (ele.title == item.title) {
+        // alert(ele.title)
+        ele.active = true;
+      } else {
+        ele.active = false;
+      }
+    });
+    setTab(item);
+  };
 
   return (
-    <div className="cont">
-    <div className="TabBar">
-      <button className="TabBarButton" onClick={event => openTab(props.title)}></button>
-      
-    </div>
-    
-    </div>
+    <>
+      <div className="cont">
+        <div className="TabBar">
+          {ItemsTab.map((item) => {
+            return (
+              <button
+                key={item.id}
+                style={{ backgroundColor: item.active ? "#FA641E" : "" }}
+                className="TabBarButton"
+                onClick={() => change(item)}
+              ></button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="TabCard">
+        <p id="title">{tab.title}</p>
+
+        <div id="card">
+          <p id="desc">{tab.desc}</p>
+        </div>
+      </div>
+    </>
   );
 }
-
 
 export default function App() {
 
@@ -159,17 +203,11 @@ export default function App() {
 
       <Secao2 />
 
-      <div className="Tabular">
-        <Tabs title='Padrão' />
-        <Tabs title='Gestão' />
-        <Tabs title='Entregadores' />
-        <Tabs title='Pagamento' />
-
-       
-      </div>
-      <TabCard title='Pigz Marketplace' desc='Além de uma página exclusiva, com o Pigz Marketplace sua loja terá mais visibilidade, no app e no site. Uma vitrine com milhares de clientes todos os dias, pra vender muito mais.' />
+      <Tabs />
 
     </div>
+
+
 
   );
 }
