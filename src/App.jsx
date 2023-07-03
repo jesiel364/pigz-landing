@@ -1,5 +1,4 @@
 import "./App.css";
-import "./dropdown.css";
 
 import { FormEndereco, FormPadrao } from "./components/forms/forms.jsx"
 import { Navbar, Container1 } from "./components/header/header.jsx"

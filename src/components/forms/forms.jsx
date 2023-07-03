@@ -45,6 +45,7 @@ function FormPadrao(){
       <div className="Form-input">
         <label>Estado</label>
         <br />
+        <DropdownMenu />
   
       </div>
   
