@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
+body{
+	/* background-color: #333333; */
+}
 
 * {
 	box-sizing: border-box;
@@ -141,17 +144,19 @@ backdrop-filter: blur( 4px );
 	padding-bottom: 18px;
 }
 
-.Form-input label{
+label{
 	font-size: 12px;
 	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
+	font-weight: 500;
 	/* background-color: #FF881F; */
 	text-align: left;
-	padding-bottom: 8px;
+	color: #333333;
 }
 
 .Form-input{
+	margin-top: 16px;
 	background-color: white;
+	
 }
 
 input{
@@ -161,17 +166,21 @@ input{
 	padding-left: 16px;
 	font-weight: 400;
 	font-size: 14px;
-	border-width: 1pt;
-	border-top-color: #ccc;
-	border-bottom-color: #ccc;
-	border-left-color: #ccc;
-	border-right-color: #ccc;
+	border-width: 2px;
+	border-color: #999999;
+	border-style:solid;
+	margin-top: 4px;
+}
+
+input:focus{
+	outline: 0;
 }
 
 input::placeholder{
 	color: #ccc;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
+	font-size: 14px;
 }
 
 input[type='phone']{
