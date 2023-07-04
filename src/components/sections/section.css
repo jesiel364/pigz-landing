@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+.Secao3 {
+	/*background-color: red ;*/
+	margin-top: 0px;
+		padding: 40px ;
+	padding-bottom: 0px;
+	margin-bottom: 40px;
+}
+
+.Secao3 p {
+	font-family: 'Poppins', sans-serif ;
+
+}
+
+.Secao3 #title{
+	font-size: 34px ;
+	font-weight: 700;
+	text-align: center ;
+	margin-bottom: 10px;
+}
+
+.Secao3 #desc{
+	font-size: 16px ;
+	font-weight: 300;
+	text-align: center ;
+	
+}

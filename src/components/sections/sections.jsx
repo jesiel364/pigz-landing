@@ -25,10 +25,24 @@ function Secao1() {
     return (
       <div className="Secao3">
         <p id="title">E mais: suporte que realmente funciona!</p>
+        
+        <p id="desc">Resposta automáticas e robôs?
+        Aqui não. Nossa equipe está sempre disponivel pra ajudar você e seus clientes.</p>
   
-        {/* <Card title="Pigz" desc="Tudo o que você precisa" /> */}
+       
       </div>
     );
   }
+  
+function Secao4(){
+  	return (
+  		<div className="Secao4">
+  			<p id="title">Pigz</p>
+  			<p id="desc">Pigz</p>
+  			<p id="title">Pigz</p>
+  			
+  		</div>
+  		);
+  }
 
-  export { Secao1, Secao2, Secao3 }
+  export { Secao1, Secao2, Secao3, Secao4 }

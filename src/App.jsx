@@ -1,12 +1,13 @@
 import "./App.css";
 import "/src/components/forms/form.css";
+import "/src/components/sections/section.css";
 import { useState } from "react";
 import { useContext } from "react";
 import { FormContext } from "./context/formContext.jsx";
 
 import { FormEndereco, FormPadrao } from "./components/forms/forms.jsx"
 import { Navbar, Container1 } from "./components/header/header.jsx"
-import { Secao1, Secao2, Secao3 } from "./components/sections/sections.jsx"
+import { Secao1, Secao2, Secao3, Secao4 } from "./components/sections/sections.jsx"
 import { Tabs } from "./components/TabsComp.jsx"
 import { SectionCards } from "./components/CardsComp"
 
@@ -30,7 +31,9 @@ function Form() {
  }
  if(form == 3){
   return (
+  	<div className="form1">
       <FormPadrao />
+      </div>
     );
  }
   
@@ -52,6 +55,7 @@ export default function App() {
       <Secao2 />
       <Tabs />
       <Secao3 />
+      <Secao4 />
 
     </div>
   );
