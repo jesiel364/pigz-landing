@@ -1,4 +1,5 @@
 import "./App.css";
+import "/src/components/forms/form.css";
 import { useState } from "react";
 import { useContext } from "react";
 import { FormContext } from "./context/formContext.jsx";
@@ -47,8 +48,8 @@ export default function App() {
       </div>
 
       <Secao1 />
-      <Secao2 />
       <SectionCards />
+      <Secao2 />
       <Tabs />
       <Secao3 />
 

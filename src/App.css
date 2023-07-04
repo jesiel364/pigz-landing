@@ -13,6 +13,10 @@ body{
 
 }
 
+input{
+    font-family: 'Poppins', sans-serif;
+}
+
 .Wrapper{
 	max-width: 450px;
 	margin: auto;
@@ -36,6 +40,10 @@ backdrop-filter: blur( 4px );
 
 .Nav-div .Logo{
 	height: 22pt;
+}
+
+button:hover{
+	opacity: 1;
 }
 
 .Btn{
@@ -156,11 +164,13 @@ label{
 .Form-input{
 	margin-top: 16px;
 	background-color: white;
+	width: 100%;
 	
 }
 
 input{
 	padding: 14px;
+	
 	border-radius: 16px;
 	width: 100%;
 	padding-left: 16px;

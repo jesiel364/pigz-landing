@@ -4,7 +4,7 @@ export const FormContext = createContext()
 
 export const FormProvider = ({children}) => {
     const [form, setForm] = useState(1)
-    const [store, setStore] = useState()
+    const [store, setStore] = useState({uf: 'RO'})
     const [user, setUser] = useState()
 
     const toggleForm = (data) => {

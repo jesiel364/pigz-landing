@@ -16,7 +16,10 @@ function FormPadrao(){
     e.preventDefault()
     console.log(nome, email, phone)
     setUser([nome, email, phone])
-    toggleForm(2)
+    if(nome, email, phone){
+      toggleForm(2)
+    }
+    
     
   }
 
@@ -68,29 +71,38 @@ function FormPadrao(){
         <input type="text" placeholder="00000-00" />
       </div>
   
-      <div className="Form-input">
+      <div className="Form-input estado">
         <label>Estado</label>
         <br />
         <DropdownMenu />
   
-      </div>
   
-      <div className="Form-input">
-        <label>Telefone</label>
+  
+    
+        <label>Endereço</label>
         <br />
-        <input type="phone" placeholder="(95) 99875-5432" />
-      </div>
-  
-      <p>
-        Ao continuar, aceito que a Pigz entre em contato comigo por telefone,
-        e-mail ou WhatsApp.
-      </p>
 
+      </div>
+      <input type="text" placeholder="Avenida Brasil" />
+ <div className="div-flex">
+      <div className="Form-input">
+        <label>Numero</label>
+        <br />
+        <input className="numero" type="number" placeholder="123" />
+      </div>
+      <div className="Form-input">
+        <label>Complemento</label>
+        <br />
+        <input className="comp" type="text" placeholder="Sala 1" />
+      </div>
+  </div>
+
+<br></br>
       <p>{user[0]} ✅</p>
       <p>{user[1]} ✅</p>
-      <p> {user[2]} ✅</p>
+      <p>{user[2]} ✅</p>
   
-      <button className="Btn">Continuar</button>
+      <button className="Btn">Próximo</button>
       
     </div>
     );

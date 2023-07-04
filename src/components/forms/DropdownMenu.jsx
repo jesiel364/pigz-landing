@@ -1,8 +1,11 @@
 import "/src/components/forms/dropdown.css";
 import React, { useState, useEffect } from 'react'
+import { useContext } from "react";
+import { FormContext } from "../../context/formContext";
 
 function Estados() {
   const [ufs, setUfs] = useState([])
+  const { store, setStore } = useContext(FormContext)
 
   useEffect(() => {
     fetch('https://gist.githubusercontent.com/rgiaviti/e4cddd4ab8220ba71b90272b815e6fc5/raw/1b48b960ef159390600bbf3a3ffe9b2d3cb3ec4d/unidades-federativas.json')
@@ -30,26 +33,32 @@ function Estados() {
     setShow(!show)
   }
 
-  const [data, setData] = useState({ UF: 'UF' })
+  const [data, setData] = useState({uf: 'RO'})
+  // setStore({uf: 'RO'})
   function Data(event, item) {
     event.preventDefault()
-    setData({ UF: item.abreviacao })
+    setData({ uf: item.abreviacao })
+    setStore({uf: item.abreviacao})
     setShow(!show)
 
   }
 
 
   return (
-    <div id="dropdown">
-      <button onClick={(event) => handleClick(event)} className="Dropbtn">{data.UF}</button>
-
-      <div id="dropdown-content">
+    <div id="">
+      <button onClick={(event) => handleClick(event)} className="Dropbtn">{data.uf} <span className="setaEstado">▼</span>
+     
+      </button>
+ 
+      {show && <div className={show ? '': 'disable'} id="dropdown-content">
         {res.map((item) => {
 
-          if (show) {
+
             return (
-              <div>
+              <div >
                 <button
+              
+                  className="DropItem"
                   key={item}
                   onClick={(event) => Data(event, item)}
                 >{item.unidade} - {item.abreviacao}</button> <br></br>
@@ -58,11 +67,11 @@ function Estados() {
               </div>
 
             );
-          }
+       
 
         })}
 
-      </div>
+      </div>}
 
     </div>
   );
@@ -71,7 +80,12 @@ function Estados() {
 }
 
 function Municipios() {
-  const [ci, setCi] = useState([])
+  const [ci, setCi] = useState()
+  const { store } = useContext(FormContext)
+
+  let city = []
+
+  // console.log(store)
 
   useEffect(() => {
     fetch('https://raw.githubusercontent.com/chandez/Estados-Cidades-IBGE/master/json/municipios.json')
@@ -81,45 +95,37 @@ function Municipios() {
       })
       .then((data) => {
         setCi(data.data) //esse é o state que armazena a lista 
+
+        data.data.forEach(item => {
+          const cidade = item.Nome
+          const estado = item.Uf
+          // console.log(estado)
+          
+            if(estado == store.uf){
+              console.log(cidade)
+            }
+            
+        
+        })
       })
   }, [])
 
-  let city = []
 
-ci.forEach(item => {
-  let cidade = item.Nome
-  let uf  = item.Uf
-  city.push({cidade: cidade, uf: uf})
 
-})
+// console.log(ci)
+
+
 
 
 return (
 
- 
-    <div id="">
-      {city.map((item) => {
+    <button className="Dropbtn cityBtn">Cidade <span className="setaCity">▼</span></button>
 
-        if (true) {
-          return (
-            <div>
-              <button
-                key={item}
-                onClick={(event) => Data(event, item)}
-              >{item.cidade} - {item.uf}</button> <br></br>
+  
+
+)
 
 
-            </div>
-
-          );
-        }
-
-      })}
-
-    </div>
-
-
-);
 
 
 }
@@ -129,8 +135,11 @@ export function DropdownMenu() {
 
   return (
     <div>
-    <Estados />
-    {/* <Municipios /> */}
+    <div className='div-flex'>
+          <Estados />
+    <Municipios />
+    </div>
+
     </div>
   );
 
