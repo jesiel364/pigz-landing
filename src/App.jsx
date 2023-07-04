@@ -1,4 +1,7 @@
 import "./App.css";
+import { useState } from "react";
+import { useContext } from "react";
+import { FormContext } from "./context/formContext.jsx";
 
 import { FormEndereco, FormPadrao } from "./components/forms/forms.jsx"
 import { Navbar, Container1 } from "./components/header/header.jsx"
@@ -7,16 +10,29 @@ import { Tabs } from "./components/TabsComp.jsx"
 import { SectionCards } from "./components/CardsComp"
 
 function Form() {
+  const { form, toggleForm } = useContext(FormContext)
+
+ 
+ if(form == 1){
   return (
     <div className="form1">
-      <form>
-
-        {/* <FormPadrao /> */}
-        <FormEndereco />
-
-      </form>
+    <FormPadrao />
     </div>
   );
+ }
+ if (form == 2) {
+  return (
+    <div className="form1">
+    <FormEndereco />
+    </div>
+  );
+ }
+ if(form == 3){
+  return (
+      <FormPadrao />
+    );
+ }
+  
 }
 
 export default function App() {
