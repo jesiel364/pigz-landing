@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { FormContext } from "./context/formContext.jsx";
 
-import { FormEndereco, FormPadrao, Store } from "./components/forms/forms.jsx"
+import { FormEndereco, FormPadrao, Store, Confirmar } from "./components/forms/forms.jsx"
 import { Navbar, Container1 } from "./components/header/header.jsx"
 import { Tabs } from "./components/TabsComp.jsx"
 import { SectionCards } from "./components/CardsComp"
@@ -35,6 +35,14 @@ function Form() {
   return (
   	<div className="form1">
       <Store />
+      </div>
+    );
+ }
+
+ if(form == 4){
+  return (
+  	<div className="form1">
+      <Confirmar />
       </div>
     );
  }

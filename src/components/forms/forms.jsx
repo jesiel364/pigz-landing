@@ -6,7 +6,7 @@ import { FormContext } from "/src/context/formContext.jsx";
 function Drop(props) {
   const [show, setShow] = useState(false);
   const [tipo, setTipo] = useState(props.title);
-  const {store, setStore} = useContext(FormContext)
+  const {store, setStore, setTipoLoja, tipoLoja} = useContext(FormContext)
 
   function handleClick(evt) {
     evt.preventDefault();
@@ -18,10 +18,18 @@ function Drop(props) {
     setShow(!show);
     setTipo(item.index1)
     if(item.index2){
-      setStore({uf: item.index2})
-   
+      setStore({cidade: item.index1,uf: item.index2})
+  
     }
+
+    if(props.callback == 'loja'){
+      setTipoLoja(item.index1)
+    }
+
+    console.log(store)
+
   }
+
 
   return (
     <div id="">
@@ -54,7 +62,7 @@ function Drop(props) {
 }
 
 function FormPadrao() {
-  const { form, toggleForm, user, setUser } = useContext(FormContext);
+  const { form, toggleForm, user, setUser,  } = useContext(FormContext);
 
   const [nome, setNome] = useState();
   const [email, setEmail] = useState();
@@ -63,7 +71,7 @@ function FormPadrao() {
   function submitForm(e) {
     e.preventDefault();
     console.log(nome, email, phone);
-    setUser([nome, email, phone]);
+    setUser({nome: nome, email: email, phone: phone});
     // if(nome, email, phone){
     //   toggleForm(2)
     // }
@@ -119,12 +127,9 @@ function FormPadrao() {
 }
 
 function FormEndereco() {
-  const { form, toggleForm, store, setStore, user, ufs, ci } = useContext(FormContext);
+  const { toggleForm, store, ufs, ci, setEndereco, endereco } = useContext(FormContext);
 
-  function handleClick(evt) {
-    evt.preventDefault();
-    toggleForm(3);
-  }
+
 
   const items = [
   ]
@@ -142,6 +147,7 @@ function FormEndereco() {
   const cidades = []
   ci.map(item => {
     if(store.uf == item.Uf){
+
       cidades.push(
         {
           index1: item.Nome,
@@ -151,14 +157,33 @@ function FormEndereco() {
     }
 
   })
+
+
+
+  const [cep, setCep] = useState()
+  const [state, setState] = useState()
+  const [city, setCity] = useState()
+  const [rua, setRua] = useState()
+  const [numeroCasa, setNumeroCasa] = useState()
+  const [comp, setComp] = useState()
+
+  function submit(e){
+    e.preventDefault()
+    endereco.push(
+      {cep: cep, loja: store, rua: rua, numero: numeroCasa, comp: comp},
+    )
+    console.log(endereco)
+    toggleForm(3)
+  }
   
   return (
+    <form onSubmit={submit}>
     <div id="endereco" style={{ display: "block" }}>
       <p className="Title">Onde fica a sua loja?</p>
 
       <div className="Form-input">
         <label>CEP</label>
-        <input type="text" placeholder="00000-00" />
+        <input value={cep} onChange={(e) => setCep(e.target.value)} type="text" placeholder="00000-00" />
       </div>
 
       <div className="Form-input estado ">
@@ -176,47 +201,57 @@ function FormEndereco() {
         <br />
       </div>    
       <label>Endereço</label>
-      <input type="text" placeholder="Avenida Brasil" />
+      <input value={rua} onChange={(e) => setRua(e.target.value)} type="text" placeholder="Avenida Brasil" />
       <div className="div-flex">
         <div className="Form-input">
           <label>Numero</label>
           <br />
-          <input className="numero" type="number" placeholder="123" />
+          <input value={numeroCasa} onChange={(e) => setNumeroCasa(e.target.value)} className="numero" type="number" placeholder="123" />
         </div>
         <div className="Form-input">
           <label>Complemento</label>
           <br />
-          <input className="comp" type="text" placeholder="Sala 1" />
+          <input value={comp} onChange={(e) => setComp(e.target.value)} className="comp" type="text" placeholder="Sala 1" />
         </div>
       </div>
 
       <br></br>
-      <p>{user[0]} ✅</p>
-      <p>{user[1]} ✅</p>
-      <p>{user[2]} ✅</p>
 
-      <button className="Btn" onClick={(evt) => handleClick(evt)}>
+
+      <button className="Btn">
         Próximo
       </button>
     </div>
+    </form>
   );
 }
 
 function Store() {
-  const { loja, setLoja } = useState();
-  const { cnpj, setCnpj } = useState();
-  const { tipo, setTipo } = useState();
-  const { ci } = useContext(FormContext);
+  const { loja, setLoja, toggleForm } = useContext(FormContext)
+  const [cnpj, setCnpj ] = useState();
+  const [ tipo, setTipo ] = useState();
+  const [ nome, setNome ] = useState();
+  const { ci, tipoLoja } = useContext(FormContext);
 
   const items = [
     {index1: "Restaurante"}, 
-    {index1: "Lanchonete"}
+    {index1: "Lanchonete"},
+    {index1: "Pizzaria"},
+    {index1: "Sorveteria"},
   ];
 
+  function submit(e) {
+    e.preventDefault();
+    setLoja({nome: nome, cnpj: cnpj, tipo: tipoLoja});
+    // if(nome, email, phone){
+    //   toggleForm(2)
+    // }
+    toggleForm(4);
+  }
 
 
   return (
-    <form>
+    <form onSubmit={submit}>
       <div id="padrao" style={{ display: "block" }}>
         <p className="Title">Me conta um pouco sobre sua loja</p>
 
@@ -225,8 +260,8 @@ function Store() {
 
           <input
             type="text"
-            value={loja}
-            onChange={(e) => setLoja(e.target.value)}
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
             placeholder="Restaurante Todo Mundo Gosta"
           />
         </div>
@@ -234,7 +269,7 @@ function Store() {
           <label>CNPJ da loja</label>
           <br />
           <input
-            type="number"
+            type="text"
             value={cnpj}
             onChange={(e) => setCnpj(e.target.value)}
             placeholder="12.345.678/0001-99"
@@ -243,7 +278,7 @@ function Store() {
         <div className="Form-input">
           <label>Tipo de loja</label>
           <br />
-          <Drop title="Selecione" data={items} />
+          <Drop title="Selecione" data={items} callback={'loja'} />
         </div>
 
   
@@ -253,4 +288,36 @@ function Store() {
   );
 }
 
-export { FormEndereco, FormPadrao, Store };
+function Confirmar(){
+  const {setUserData, userData, user, loja, endereco} = useContext(FormContext)
+
+  function submit(e){
+    e.preventDefault()
+    setUserData(
+      
+      [ {user: user, loja: loja, local: endereco }]
+      
+      )
+
+        console.log(userData)
+
+
+  }
+
+  return (
+    <form onSubmit={submit}>
+      <div id="padrao" style={{ display: "block" }}>
+        <p className="Title">Confirmar</p>
+        <p>Dê o primeiro passo para aumentar as suas vendas.</p>
+
+       <small>{JSON.stringify(userData)}</small>
+
+ 
+
+        <button className="Btn">Confirmar</button>
+      </div>
+    </form>
+  );
+}
+
+export { FormEndereco, FormPadrao, Store, Confirmar };

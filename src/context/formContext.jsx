@@ -6,9 +6,13 @@ export const FormProvider = ({ children }) => {
     const [form, setForm] = useState(1)
     const [store, setStore] = useState({ uf: 'RO' })
     const [user, setUser] = useState()
+    const [endereco, setEndereco] = useState([])
     const [ufs, setUfs] = useState([])
     const [ci, setCi] = useState()
-    
+    const [loja, setLoja] = useState()
+    const [tipoLoja, setTipoLoja] = useState()
+    const [userData, setUserData] = useState()
+
 
 
     useEffect(() => {
@@ -45,7 +49,7 @@ export const FormProvider = ({ children }) => {
 
 
     return (
-        <FormContext.Provider value={{ form, toggleForm, store, setStore, user, setUser, ufs, ci }}>
+        <FormContext.Provider value={{userData, setUserData, form, toggleForm, store, setStore, user, setUser, ufs, ci, loja, setLoja, tipoLoja, setTipoLoja, endereco, setEndereco }}>
             {children}
         </FormContext.Provider>
     );
