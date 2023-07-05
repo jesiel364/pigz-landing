@@ -38,8 +38,19 @@ function Secao4(){
   	return (
   		<div className="Secao4">
   			<p id="title">Pigz</p>
-  			<p id="desc">Pigz</p>
-  			<p id="title">Pigz</p>
+  			<p id="desc1">Tudo o que você precisa</p>
+  			<p id="desc2">Pigz Marketplace<br></br> 
+        Página exclusiva<br></br> 
+        Pigz Gestão Desktop e Mobile<br></br>
+         Gestão de entregadores<br></br> 
+         Vias de impressão personalizáveis</p>
+
+
+        <p id='price'>R$199/mês</p>
+
+        <button className="
+        Btn">Vender no Pigz agora</button>
+
   			
   		</div>
   		);

@@ -8,7 +8,7 @@
 	margin-bottom: 40px;
 }
 
-.Secao3 p {
+.Secao3, .Secao4 {
 	font-family: 'Poppins', sans-serif ;
 
 }
@@ -25,4 +25,46 @@
 	font-weight: 300;
 	text-align: center ;
 	
+}
+
+.Secao4 {
+	background-color: #FAFAFA;
+	padding: 40px;
+	border-radius: 42px;
+}
+
+.Secao4 #title{
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.Secao4 #desc1{
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.Secao4 #desc2{
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.Secao4 #price{
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 54px;
+	margin-bottom: 34px;
+	background-color: #FFFFFF;
+	padding: 24px;
+	max-width: 160px;
+	border-radius: 42px;
+}
+
+.Secao4 .Btn{
+	/* padding: 16px; */
+	padding: 11px 36px 10px 36px;
+	display: flex;
+	margin: auto;
+	font-weight: 400;
+	font-size: 16px;
 }
