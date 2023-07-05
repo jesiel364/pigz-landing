@@ -96,37 +96,9 @@ function Municipios() {
       .then((data) => {
         setCi(data.data) //esse é o state que armazena a lista 
 
-        data.data.forEach(item => {
-          const cidade = item.Nome
-          const estado = item.Uf
-          // console.log(estado)
-          
-            if(estado == store.uf){
-              console.log(cidade)
-            }
-            
-        
-        })
+
       })
-  }, [])
-
-
-
-// console.log(ci)
-
-
-
-
-return (
-
-    <button className="Dropbtn cityBtn">Cidade <span className="setaCity">▼</span></button>
-
-  
-
-)
-
-
-
+  })
 
 }
 

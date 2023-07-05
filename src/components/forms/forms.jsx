@@ -5,6 +5,8 @@ import { FormContext } from "/src/context/formContext.jsx";
 
 function Drop(props) {
   const [show, setShow] = useState(false);
+  const [tipo, setTipo] = useState(props.title);
+  const {store, setStore} = useContext(FormContext)
 
   function handleClick(evt) {
     evt.preventDefault();
@@ -14,12 +16,17 @@ function Drop(props) {
   function Data(evt, item) {
     evt.preventDefault();
     setShow(!show);
+    setTipo(item.index1)
+    if(item.index2){
+      setStore({uf: item.index2})
+   
+    }
   }
 
   return (
     <div id="">
-      <button onClick={(evt) => handleClick(evt)} className="Dropbtn">
-        {props.title} <span className="setaEstado">▼</span>
+      <button onClick={(evt) => handleClick(evt)} className="Dropbtn Drop-fit">
+        {tipo} <span className="setaEstado">▼</span>
       </button>
 
       {show && (
@@ -27,13 +34,14 @@ function Drop(props) {
           
             {props.data.map((item) => {
               return (
-              	<div>
+              	<div key={item.index1}>
                 <button
-                key={item}
-                  onClick={(evt) => Data(evt, item.cidade)}
+                  key={item}
+                  onClick={(evt) => Data(evt, item)}
                   className="DropItem"
                 >
-                  {item.cidade}
+                  {item.index1} 
+                  {item.index2 && ` - ${item.index2}`}
                 </button>
                 </div>
               );
@@ -111,13 +119,39 @@ function FormPadrao() {
 }
 
 function FormEndereco() {
-  const { form, toggleForm, store, setStore, user } = useContext(FormContext);
+  const { form, toggleForm, store, setStore, user, ufs, ci } = useContext(FormContext);
 
   function handleClick(evt) {
     evt.preventDefault();
     toggleForm(3);
   }
 
+  const items = [
+  ]
+
+  const estados = ufs
+  estados.map(item => {
+    items.push(
+      {
+        index1: item['unidade-federativa'],
+        index2: item['abreviacao'],
+      }
+      )
+  })
+
+  const cidades = []
+  ci.map(item => {
+    if(store.uf == item.Uf){
+      cidades.push(
+        {
+          index1: item.Nome,
+          index2: item.Uf,
+        }
+        )
+    }
+
+  })
+  
   return (
     <div id="endereco" style={{ display: "block" }}>
       <p className="Title">Onde fica a sua loja?</p>
@@ -127,14 +161,21 @@ function FormEndereco() {
         <input type="text" placeholder="00000-00" />
       </div>
 
-      <div className="Form-input estado">
+      <div className="Form-input estado ">
         <label>Estado</label>
         <br />
-        <DropdownMenu />
+      
 
-        <label>Endereço</label>
+        <Drop title='Estado' data={items}></Drop>
+        
+        <label>Municipio</label>
+
+        <Drop title='Municipio' data={cidades}></Drop>
+
+    
         <br />
-      </div>
+      </div>    
+      <label>Endereço</label>
       <input type="text" placeholder="Avenida Brasil" />
       <div className="div-flex">
         <div className="Form-input">
@@ -165,11 +206,14 @@ function Store() {
   const { loja, setLoja } = useState();
   const { cnpj, setCnpj } = useState();
   const { tipo, setTipo } = useState();
+  const { ci } = useContext(FormContext);
 
   const items = [
-    { cidade: "Boa Vista", estado: "RR" },
-    { cidade: "São Paulo", estado: "SP" },
+    {index1: "Restaurante"}, 
+    {index1: "Lanchonete"}
   ];
+
+
 
   return (
     <form>
@@ -199,15 +243,11 @@ function Store() {
         <div className="Form-input">
           <label>Tipo de loja</label>
           <br />
-          <Drop title="Municipio" data={items} />
+          <Drop title="Selecione" data={items} />
         </div>
 
-        <p>
-          Ao continuar, aceito que a Pigz entre em contato comigo por telefone,
-          e-mail ou WhatsApp.
-        </p>
-
-        <button className="Btn">Continuar</button>
+  
+        <button className="Btn">Concluir</button>
       </div>
     </form>
   );
