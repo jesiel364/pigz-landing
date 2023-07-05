@@ -69,7 +69,8 @@ export function Footer() {
 
 
                 <div className="bottom div-flex">
-                    <p>© Copyright 2021 • Pigz • Todos os direitos reservados<br></br>Orange Labs Tecnologia LTDA. CNPJ 34.895.008/0001-85</p>
+                    <div><p>© Copyright 2021 • Pigz • Todos os direitos reservados</p>
+                    <p>Orange Labs Tecnologia LTDA. CNPJ 34.895.008/0001-85</p></div>
                     <img src={Orange}></img>
                 </div>
             </div>
