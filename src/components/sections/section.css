@@ -8,8 +8,9 @@
 	margin-bottom: 40px;
 }
 
-.Secao3, .Secao4 {
+.Secao3, .Secao4, .Contact {
 	font-family: 'Poppins', sans-serif ;
+	color: #333333;
 
 }
 
@@ -30,7 +31,11 @@
 .Secao4 {
 	background-color: #FAFAFA;
 	padding: 40px;
+	padding-top: 22px;
 	border-radius: 42px;
+	margin-left: 18px;
+	margin-right: 18px;
+	margin-bottom: 20px;
 }
 
 .Secao4 #title{
@@ -50,21 +55,61 @@
 }
 
 .Secao4 #price{
+	width:fit-content;
 	font-size: 20px;
 	font-weight: 600;
 	margin-top: 54px;
 	margin-bottom: 34px;
 	background-color: #FFFFFF;
 	padding: 24px;
-	max-width: 160px;
+	padding-bottom: 18px;
+	padding-top: 18px;
+	/* max-width: 160px; */
 	border-radius: 42px;
+
 }
 
-.Secao4 .Btn{
+.Secao4 .Btn, .SaibaMais{
 	/* padding: 16px; */
 	padding: 11px 36px 10px 36px;
 	display: flex;
+	width: fit-content;
 	margin: auto;
 	font-weight: 400;
 	font-size: 16px;
+}
+
+#SaibaMais{
+
+}
+
+.Contact{
+	display: flex;
+	padding: 45px;
+	font-size: 16px;
+	font-weight: 500;
+	/* background-color: red; */
+	justify-content: center;
+}
+
+.Contact #text{
+	text-align: left;
+	margin-right: 19px;
+}
+
+.Contact .icon{
+	height: 14px;
+	margin-right: 7px;
+}
+
+.Contact .ddd{
+	font-size: 13px;
+	margin-right: 2px;
+
+}
+
+.Contact .ddd{
+	font-size: 13px;
+	margin-right: 2px;
+
 }

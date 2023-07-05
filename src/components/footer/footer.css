@@ -1,0 +1,135 @@
+.Footer{
+    background-color: #FAFAFA;
+    padding-top: 56px;
+    padding-left: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #676767;
+}
+
+.App #footer-logo{
+    width: 80px;
+    font-size: 40px;
+    /* background-color: red; */
+}
+
+.App #subtitle{
+    font-size: 11px;
+    font-weight: 400;
+
+}
+
+.App #desc{
+    font-size: 16px;
+    font-weight: 600;
+
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+#AppStores img{
+    margin-right: 10px;
+}
+
+.Sobre #pigz{
+    font-size: 16px;
+    font-weight: 600;
+ 
+    margin-top: 54px;
+    margin-bottom: 24px;
+}
+
+.Sobre nav{
+    list-style: none;
+    
+}
+
+.Sobre a{
+    font-size: 16px;
+    font-weight: 400;
+    color: #676767;
+    margin-bottom: 24px;
+    text-decoration: none;
+}
+
+.call{
+    margin-top: 54px;
+ 
+}
+
+#fale{
+    display: flex;
+}
+
+#fale img{
+    width: 24px;
+    margin-right: 15px;
+    margin-bottom: 24px;
+}
+
+#fale p{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.call #email{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.call #phone{
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.call #text{
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.icon-group img{
+    margin-right: 15px;
+}
+
+.icon-group{
+    margin-bottom: 66px;
+}
+
+hr{
+    color: #676767;
+    height: 2px;
+    background-color: #676767;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+#footer{
+    margin-right: 16px;
+    margin-bottom: 30px;
+}
+
+#footer .links a {
+    font-size: 12px;
+    font-weight: 400;
+    margin-right: 30px;
+    text-decoration: none;
+    color: #676767;
+
+}
+
+#footer .links{
+    margin-bottom: 24px;
+}
+
+.bottom{
+   
+}
+
+.bottom p{
+    font-size: 10px;
+
+}
+.bottom img{
+    margin-left: 30px;
+
+}
