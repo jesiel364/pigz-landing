@@ -78,7 +78,7 @@ function FormPadrao() {
     toggleForm(2);
   }
 
-  const test = [{"user":{"nome":"Jesiel Gomes Da Silva","email":"jesiel364@gmail.com","phone":"+5595991712353"},"loja":{"nome":"5rfydfhg","cnpj":"567657567","tipo":"Lanchonete"},"local":{"cep":"69315-695","cidade":"Calçoene","uf":"AP","rua":"Rua Beija-Flor, N440 , São Bento","numero":"567"}}]
+  // const test = [{"user":{"nome":"Jesiel Gomes Da Silva","email":"jesiel364@gmail.com","phone":"+5595991712353"},"loja":{"nome":"5rfydfhg","cnpj":"567657567","tipo":"Lanchonete"},"local":{"cep":"69315-695","cidade":"Calçoene","uf":"AP","rua":"Rua Beija-Flor, N440 , São Bento","numero":"567"}}]
 
   return (
     <form onSubmit={submitForm}>
@@ -86,15 +86,6 @@ function FormPadrao() {
         <p className="Title">Quero vender no Pigz</p>
         <p>Dê o primeiro passo para aumentar as suas vendas.</p>
 
-        <p>{test[0].user.nome}</p>
-        <p>{test[0].user.email}</p>
-        <p>{test[0].user.phone}</p>
-
-        <p>{test[0].local.rua} N{test[0].local.numero} - {test[0].local.cidade}, {test[0].local.uf}</p>
-        
-        <p>{test[0].loja.nome}</p>
-        <p>{test[0].loja.tipo}</p>
-        <p>{test[0].loja.cnpj}</p>
 
         {/* <p>{test[0].loja.nome}</p>
         <p>{test[0].loja.email}</p>
