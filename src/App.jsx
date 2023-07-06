@@ -1,5 +1,6 @@
 import "./App.css";
 import "/src/components/forms/form.css";
+import "/src/components/header/header.css";
 import "/src/components/sections/section.css";
 import "/src/components/footer/footer.css";
 import { useState } from "react";

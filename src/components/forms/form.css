@@ -1,23 +1,114 @@
-
-
 .div-flex {
-    
-    display: flex;
 
-    width: 100%;
-    margin-right: 0;
-        /* background-color: aquamarine; */
-  
-  }
+  display: flex;
 
-  .numero{
-    width: 110px;
-    margin-right: 0;
-  }
+  width: 100%;
+  margin-right: 0;
+  /* background-color: aquamarine; */
 
-  .comp{
-    width: 80px;
-    margin-left: 0px;
-    display: flex;
-    
-  }
+}
+
+.numero {
+  width: 110px;
+  margin-right: 0;
+}
+
+.comp {
+  width: 80px;
+  margin-left: 0px;
+  display: flex;
+
+}
+
+
+.form1 {
+  margin-top: 20px;
+  margin-left: 16px;
+  margin-right: 20px;
+  color: #333333;
+  background-color: #FFFFFF;
+  padding-top: 26px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 38px;
+  box-shadow: 0px 12px 35px 0px #FA641E;
+}
+
+.form1 .Title {
+  font-size: 28px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  /* background-color: #FF881F; */
+  text-align: left;
+  padding-bottom: 8px;
+
+}
+
+.form1 p {
+
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  /* background-color: #FF881F; */
+  text-align: left;
+  padding-bottom: 18px;
+}
+
+label {
+  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  /* background-color: #FF881F; */
+  text-align: left;
+  color: #333333;
+}
+
+.Form-input {
+  margin-top: 16px;
+  background-color: white;
+  width: 100%;
+
+}
+
+input {
+  padding: 14px;
+
+  border-radius: 16px;
+  width: 100%;
+  padding-left: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  border-width: 2px;
+  border-color: #999999;
+  border-style: solid;
+  margin-top: 4px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+input::placeholder {
+  color: #ccc;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+input[type='phone'] {
+  margin-bottom: 16px;
+  /* background-color: #FA641E; */
+  font-size: 13pt;
+}
+
+.form1 .Btn {
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-radius: 18px;
+  background-color: #FA641E;
+  background-image: none;
+  box-shadow: 20px;
+}

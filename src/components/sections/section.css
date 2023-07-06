@@ -1,5 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
+#div-meio{
+	/* background-color: aqua; */
+	color: #333333;
+}
+
+
+#div-meio #logo2{
+	text-align: center;
+	margin: auto;
+	/* background-color: red; */
+	display: block;
+	position: relative;
+	top: -68px;
+	height: 148px;
+}
+
+#div-meio p{
+	font-size: 32px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	/* background-color: #FF881F; */
+	text-align: center;
+	padding-bottom: 18px;
+	padding-left: 85px;
+	padding-right: 85px;
+}
+
+
+.Secao2{
+	/* background-color: violet; */
+	padding: 40px;
+	color: #333333;
+}
+
+.Secao2 .Title{
+	font-size: 32pt;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	/* background-color: #FF881F; */
+	text-align: center;
+	line-height: 40pt;
+	padding-top: 20px;
+	padding-bottom: 0px;
+	margin: auto;
+}
+
+.Secao2 .Desc{
+	min-width: 40pt;
+	font-size: 16pt;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	/* background-color: #FF881F; */
+	text-align: center;
+	padding: 0;
+	padding-top: 20px;
+	padding-bottom: 0px;
+	margin: auto;
+}
+
 .Secao3 {
 	/*background-color: red ;*/
 	margin-top: 0px;

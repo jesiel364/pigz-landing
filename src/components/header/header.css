@@ -1,0 +1,122 @@
+.Nav-div {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.92);
+    /*box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );*/
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+
+.Nav-div .Logo {
+    height: 22pt;
+}
+
+
+button:hover{
+	transform: translateY(3px);
+	box-shadow: none;
+    background-color: #FA641E;
+
+    
+}
+
+.Btn:active {
+	opacity: 0.5;
+  }
+
+/* .Btn{
+	background-image: linear-gradient(to bottom, #FA641E, #FF881F);
+	font-size: 11pt;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	color: #FFFFFF;
+	border: 1pt;
+	border-radius: 45px;
+	padding-left: 20pt;
+	padding-right: 20pt;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	border-radius: 50px;
+	box-shadow:  0px 12px 35px 0px   #FA641E;
+    
+} */
+
+.Btn{
+	width: fit-content;
+	padding: 6px ;
+    padding-left: 20px;	
+    padding-right: 20px;	
+	font-size: 14px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	border-radius: 50px;
+	background-image: linear-gradient(258deg, #FA641E 0%, #FF881F 100%);
+	box-shadow: 0 20px 30px -6px rgba(238, 103, 97, 0.5);
+	outline: none;
+	cursor: pointer;
+	border: none;
+	
+	color: white;
+  }
+
+.Container1 {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 32px;
+
+    /* min-width: 100vh; */
+    max-width: 100vh;
+
+
+}
+
+.Title-div {
+    display: flex;
+    /* justify-content: space-around; */
+    /* max-width: 400px; */
+    /* object-fit:contain; */
+    /* overflow-x: hidden; */
+    /* background-color: greenyellow; */
+
+
+}
+
+.Container1 .Title {
+    font-size: 40px;
+    width: 300px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #FFFFFF;
+    /* background-color: red; */
+
+}
+
+.Title-div img {
+    /* height: 200pt; */
+    width: 35vh;
+    /* display: block; */
+	position: relative;
+	top: 20px;
+    right: 90px;
+    /* background-color: blue; */
+    /* overflow-x: hidden; */
+
+}
+
+.Container1 p {
+    margin-top: 36px;
+
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+@media screen() {
+    
+}

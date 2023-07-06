@@ -17,13 +17,18 @@ function Navbar() {
   function Container1() {
     return (
       <div className="Container1">
+
         <div className="Title-div">
-          <h2>Pigz: tudo que você precisa pra vender mais!</h2>
+          <div>
+                <p className="Title">Pigz: tudo que você precisa pra vender ainda mais!</p>
   
+          </div>
+      
           <div>
             <img src={Burger1} />
           </div>
         </div>
+
         <div>
           <p>
             Temos uma equipe ansiosa para cadastrar seus produtos no Pigz

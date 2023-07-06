@@ -20,59 +20,11 @@ input{
 .Wrapper{
 	max-width: 450px;
 	margin: auto;
+	overflow: hidden;
 }
 
-.Nav-div{
-	background-color: #fff;
-	display: flex;
-	justify-content: space-between ;
-	padding: 10px;
-	position: -webkit-sticky;
-	position:sticky;
-	top: 0;
-	z-index: 9999;
-background: rgba( 255, 255, 255, 0.92);
-/*box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );*/
-backdrop-filter: blur( 4px );
--webkit-backdrop-filter: blur( 4px );
-}	
 
 
-.Nav-div .Logo{
-	height: 22pt;
-}
-
-button:hover{
-	opacity: 1;
-}
-
-.Btn{
-	background-image: linear-gradient(to bottom, #FA641E, #FF881F);
-	font-size: 11pt;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
-	color: #FFFFFF;
-	border: 1pt;
-	border-radius: 45px;
-	padding-left: 20pt;
-	padding-right: 20pt;
-	padding-bottom: 4px;
-	padding-top: 4px;
-	border-radius: 50px;
-	box-shadow:  0px 12px 35px 0px   #FA641E;
-    
-}
-
-.Container1{
-	padding-left: 16px ;
-	padding-right: 16px ;
-	padding-top: 32px;
-
-	/* min-width: 100vh; */
-	max-width: 100vh;
-	
-
-}
 
 .Div1{
 	background-image: linear-gradient(to right, #FA641E, #FF881F);
@@ -81,166 +33,8 @@ button:hover{
 	
 }
 
-.Title-div{
-	display: flex;
-	max-width: 400px;
-	/* object-fit:contain; */
-	
-	
-}
 
-.Title-div img{
-	height: 50pt;
-	/* width: 100vh; */
-	object-fit:cover;
-	/* object-position: 20% 100%; */
-	/* position: relative; */
-	/* background-color: blue; */
-	overflow-x: hidden;
 
-}
-
-.Container1 h2{
-	min-width: 85%;
-	font-size: 36pt;
-	font-family: 'Poppins', sans-serif;
-	font-weight: bold;
-	color: #FFFFFF;
-	/* display: flex; */
-		/* background-color: red; */
-
-}
-
-.Container1 p{
-	margin-top: 36px;
-
-	font-size: 16pt;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
-	color: #FFFFFF;
-}
-
-.form1{
-	margin-top: 20px;
-	margin-left: 16px;
-	margin-right: 20px;
-	color: #333333;
-	background-color: #FFFFFF;
-	padding-top: 26px;
-	padding-left: 24px;
-	padding-right: 24px;
-	border-radius: 38px;
-	box-shadow:  0px 12px 35px 0px   #FA641E; 
-}
-
-.form1 .Title{
-	font-size: 28px;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 600;
-	/* background-color: #FF881F; */
-	text-align: left;
-	padding-bottom: 8px;
-	
-}
-
-.form1 p{
-
-	font-size: 14px;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
-	/* background-color: #FF881F; */
-	text-align: left;
-	padding-bottom: 18px;
-}
-
-label{
-	font-size: 12px;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
-	/* background-color: #FF881F; */
-	text-align: left;
-	color: #333333;
-}
-
-.Form-input{
-	margin-top: 16px;
-	background-color: white;
-	width: 100%;
-	
-}
-
-input{
-	padding: 14px;
-	
-	border-radius: 16px;
-	width: 100%;
-	padding-left: 16px;
-	font-weight: 400;
-	font-size: 14px;
-	border-width: 2px;
-	border-color: #999999;
-	border-style:solid;
-	margin-top: 4px;
-}
-
-input:focus{
-	outline: 0;
-}
-
-input::placeholder{
-	color: #ccc;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
-	font-size: 14px;
-}
-
-input[type='phone']{
-	margin-bottom: 16px;
-	/* background-color: #FA641E; */
-	font-size: 13pt;
-}
-
-.form1 .Btn{
-	width: 100%;
-	margin-top: 24px;
-	margin-bottom: 24px;
-	padding-bottom: 12px;
-	padding-top: 12px;
-	border-radius: 18px;
-	background-color: #FA641E;
-	background-image: none;
-	box-shadow: 20px ;
-}
-
-.Btn:hover{
-	background-color: #FA641E;
-}
-
-#div-meio{
-	/* background-color: aqua; */
-	color: #333333;
-}
-
-#div-meio #logo2{
-	text-align: center;
-	margin: auto;
-	/* background-color: red; */
-	display: block;
-	position: relative;
-	top: -68px;
-	height: 148px;
-}
-
-#div-meio p{
-	font-size: 32px;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 600;
-	/* background-color: #FF881F; */
-	text-align: center;
-	padding-bottom: 18px;
-	padding-left: 85px;
-	padding-right: 85px;
-}
 
 .card-banner{
 	background-color: #FAFAFA;
@@ -282,36 +76,6 @@ input[type='phone']{
 	padding: 0;
 }
 
-.Secao2{
-	/* background-color: violet; */
-	padding: 40px;
-	color: #333333;
-}
-
-.Secao2 .Title{
-	font-size: 32pt;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 600;
-	/* background-color: #FF881F; */
-	text-align: center;
-	line-height: 40pt;
-	padding-top: 20px;
-	padding-bottom: 0px;
-	margin: auto;
-}
-
-.Secao2 .Desc{
-	min-width: 40pt;
-	font-size: 16pt;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
-	/* background-color: #FF881F; */
-	text-align: center;
-	padding: 0;
-	padding-top: 20px;
-	padding-bottom: 0px;
-	margin: auto;
-}
 
 .TabBar {
 	display: flex;
