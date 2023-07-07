@@ -2,8 +2,8 @@ import MarketPic from "/src/assets/pigzMarket/Grupo de máscara 2417@3x.png";
 import GestaoPic from "/src/assets/pigzGestao/Grupo de máscara 2418@3x.png";
 import EntregaPic from "/src/assets/pigzEntrega/Grupo de máscara 2420@3x.png";
 import MobilePic from "/src/assets/pigzMobile/mobile@3x.png";
-
-import { useState } from "react";
+import { useContext, useState } from "react"
+import { FormContext } from "/src/context/formContext.jsx"; 
 
 
 const ItemsTab = [
@@ -39,6 +39,8 @@ const ItemsTab = [
   
   export function Tabs() {
     const [tab, setTab] = useState(ItemsTab[0]);
+    
+    const [sec, setSec] = useState(1)
   
     const change = (item) => {
       tab.active = true;
@@ -52,6 +54,16 @@ const ItemsTab = [
       });
       setTab(item);
     };
+    
+    function time(){
+  	setSec(sec + 1)
+  	if(sec == 4){
+  		setSec(0)
+  	}
+  	change(ItemsTab[sec])
+  
+  }
+setTimeout(time, 3000) 
   
     return (
       <>

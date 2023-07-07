@@ -17,6 +17,7 @@ import { Footer } from "./components/footer/footer";
 function Form() {
   const { form, toggleForm } = useContext(FormContext)
 
+
  
  if(form == 1){
   return (
