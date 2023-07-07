@@ -108,7 +108,7 @@ function FormPadrao() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="jesiel@email.com"
+            placeholder="leonercio.goesfeeld@email.com"
           />
         </div>
         <div className="Form-input">
@@ -197,11 +197,11 @@ function FormEndereco() {
         <br />
       
 
-        <Drop title='Estado' data={items}></Drop>
+        <Drop title='UF' data={items}></Drop>
         
         <label>Municipio</label>
 
-        <Drop title='Municipio' data={cidades}></Drop>
+        <Drop title='Selecione' data={cidades}></Drop>
 
     
         <br />
@@ -300,13 +300,14 @@ function Store() {
 }
 
 function Confirmar(){
-  const {userData} = useContext(FormContext)
+  const {userData, toggleForm} = useContext(FormContext)
 
   function submit(e){
     e.preventDefault()
 
 
         console.log(userData)
+        toggleForm(1)
 
 
   }
