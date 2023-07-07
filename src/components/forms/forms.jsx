@@ -313,12 +313,15 @@ function Confirmar(){
 
   return (
     <form onSubmit={submit}>
-      <div id="padrao" style={{ display: "block" }}>
+      <div className="desc" id="padrao" style={{ display: "block" }}>
         <p className="Title">Confirmar</p>
         <p>Dê o primeiro passo para aumentar as suas vendas.</p>
-
-       <small>{JSON.stringify(userData)}</small>
-
+				
+		<small>	{JSON.stringify(userData.user)}</small>
+		<small>	{JSON.stringify(userData.local)}</small>
+		<small>	{JSON.stringify(userData.loja)}</small>
+	
+			
 
  
 
