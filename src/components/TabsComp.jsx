@@ -39,8 +39,7 @@ const ItemsTab = [
   
   export function Tabs() {
     const [tab, setTab] = useState(ItemsTab[0]);
-    
-    const [sec, setSec] = useState(1)
+    const [index, setIndex] = useState(1)
   
     const change = (item) => {
       tab.active = true;
@@ -56,11 +55,11 @@ const ItemsTab = [
     };
     
     function time(){
-  	setSec(sec + 1)
-  	if(sec == 4){
-  		setSec(0)
+  	setIndex(index + 1)
+  	if(index == 3){
+  		setIndex(0)
   	}
-  	change(ItemsTab[sec])
+  	change(ItemsTab[index])
   
   }
 setTimeout(time, 3000) 

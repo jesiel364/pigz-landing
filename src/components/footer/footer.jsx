@@ -50,7 +50,7 @@ export function Footer() {
 
 
                 <p id='text'>Pigz nas redes</p>
-                <div class='div-flex icon-group'>
+                <div className='div-flex icon-group'>
                     <a href='#'><img src={Linkedin}></img></a>
                     <a href='#'><img src={Instagram}></img></a>
                     <a href='#'><img src={Facebook}></img></a>
