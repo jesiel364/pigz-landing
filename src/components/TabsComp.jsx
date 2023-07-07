@@ -40,29 +40,51 @@ const ItemsTab = [
   export function Tabs() {
     const [tab, setTab] = useState(ItemsTab[0]);
     const [index, setIndex] = useState(1)
+
+    const [stop, setStop] = useState(false)
   
-    const change = (item) => {
+    const change = (item, trigger) => {
+      
       tab.active = true;
       ItemsTab.filter((ele) => {
         if (ele.title == item.title) {
-          // alert(ele.title)
           ele.active = true;
         } else {
           ele.active = false;
         }
       });
       setTab(item);
+
+      if(trigger == 'time'){
+        
+        
+      } if(trigger == 'button'){
+        setStop(true)
+        console.log(item.id)
+        
+      }
+      
     };
     
     function time(){
-  	setIndex(index + 1)
-  	if(index == 3){
-  		setIndex(0)
-  	}
-  	change(ItemsTab[index])
-  
+
+      if(index == 3){
+        setIndex(0)
+        
+      }else{
+        setIndex(index + 1)
+
+      }
+ 
+    if(stop){
+      setStop(true)
+      // setInterval(console.log(setStop(false)), 15000)
+    }else{
+      change(ItemsTab[index], "time")
+    } 
   }
-setTimeout(time, 3000) 
+  
+setTimeout(time,3000)
   
     return (
       <>
@@ -74,7 +96,7 @@ setTimeout(time, 3000)
                   key={item.id}
                   style={{ backgroundColor: item.active ? "#FA641E" : "" }}
                   className="TabBarButton"
-                  onClick={() => change(item)}
+                  onClick={() => change(item, 'button')}
                 ></button>
               );
             })}
