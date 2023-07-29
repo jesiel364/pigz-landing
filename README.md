@@ -1,4 +1,4 @@
 # Pigz Delivery Clone
 Landing page da Pigz
 
-<img src='pigzdelivery.gif' />
+<img height='500' src='pigzdelivery.gif' />
